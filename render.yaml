@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: mycab360-mail-service
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: APP_ENCRYPTION_KEY
+        sync: false
+      - key: MAIL_SERVICE_JWT_SECRET
+        sync: false
+      - key: PORT
+        value: 8080
